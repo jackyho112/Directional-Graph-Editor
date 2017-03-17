@@ -1,0 +1,48 @@
+:global {
+  html, body {
+    font: 11pt arial;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #app, .app {
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 150%;
+    margin: 5px 0;
+  }
+
+  h2 {
+    font-size: 100%;
+    margin: 5px 0;
+  }
+
+  table.view {
+    width: 100%;
+  }
+
+  table td {
+    vertical-align: top;
+  }
+
+  table table td {
+    vertical-align: middle;
+  }
+
+  input[type=text] {
+    border: 1px solid lightgray;
+  }
+
+  .toggled {
+    background: #87AEE2;
+    outline: none;
+    border: 1px solid #191919;
+    border-radius: 5px;
+  }
+
+  .hidden {
+    display: none;
+  }
+}

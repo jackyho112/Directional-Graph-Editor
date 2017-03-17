@@ -1,0 +1,33 @@
+$shapes: "ellipse", "box", "diamond", "triangle", "star", "database", "circle";
+
+@mixin shape-background($shape) {
+  background-image: url(img/#{$shape}.svg);
+}
+
+.node-shape-container {
+  padding: 3px;
+
+  @each $shape in $shapes {
+    #{".#{$shape}"} {
+      @include shape-background($shape);
+    }
+  }
+
+  .shape {
+    cursor: pointer;
+    padding: 2px;
+    height: 42px;
+    width: 42px;
+    outline: none;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    background-color: transparent;
+    border: 0;
+    background-position: center;
+  }
+
+  .selected {
+    background-color: #87AEE2;
+    border-radius: 3px;
+  }
+}
