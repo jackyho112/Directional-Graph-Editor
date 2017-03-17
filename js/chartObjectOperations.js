@@ -1,5 +1,17 @@
 import _ from 'lodash'
 
+const uniqueObjectFields = ['x', 'y', 'id', 'to', 'from']
+
+function getUniqueObjectFields(object) {
+  return {
+    x: object.x,
+    y: object.y,
+    id: object.id,
+    to: object.to ? object.to.id : '',
+    from: object.from ? object.from.id : '',
+  }
+}
+
 export function addChartObject(type, tree, ...fields) {
   tree.add(_.assign(
     {},
@@ -16,14 +28,8 @@ export function updateChartObject(tree, fields, objects) {
     const multipleUpdateFields = objects.map(object => {
       return _.assign(
         {},
-        _.omit(fields, ['x', 'y', 'id', 'to', 'from']),
-        {
-          x: object.x,
-          y: object.y,
-          id: object.id,
-          to: object.to ? object.to.id : '',
-          from: object.from ? object.from.id : '',
-        }
+        _.omit(fields, uniqueObjectFields),
+        getUniqueObjectFields(object)
       )
     })
 

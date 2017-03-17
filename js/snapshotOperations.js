@@ -1,5 +1,3 @@
-import _ from 'lodash'
-
 let snapshots = []
 let currentSnapshotIndex = -1
 let freezeSnapshots = false

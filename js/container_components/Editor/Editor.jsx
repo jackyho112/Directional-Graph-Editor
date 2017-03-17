@@ -144,7 +144,7 @@ class Editor extends Component {
   enterObjectEditMode(type) {
     const currentEditingObject = _.merge(
       {},
-      type === 'network' ? this.networkSettings : this.state[`${type}FormFields`],
+      type === 'network' ? this.networkSettings : this.state[`${type}FormFields`]
     )
 
     if (type !== 'network' && !currentEditingObject.id) return
